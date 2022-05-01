@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<Doan.Models.CTDONDATHANG>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiet Đơn Hàng</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã đơn
+        </th>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn Giá
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MADONDATHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MASP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONGIA)
+            </td>
+        </tr>
+    }
+</table>
